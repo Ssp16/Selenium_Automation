@@ -18,4 +18,9 @@ public class Dropdown {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+	public method1()
+	{
+		system.out.println("Fellowcreators");
+	}
 }
