@@ -1,36 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-10T12:16:37 IST" name="Default suite" finished-at="2023-07-10T12:16:59 IST" duration-ms="21760">
+  <suite started-at="2024-01-13T19:07:32 IST" name="Default suite" finished-at="2024-01-13T19:08:18 IST" duration-ms="46053">
     <groups>
     </groups>
-    <test started-at="2023-07-10T12:16:37 IST" name="Default test" finished-at="2023-07-10T12:16:59 IST" duration-ms="21760">
-      <class name="Base.BaseClass">
-        <test-method is-config="true" signature="Beforeclass()[pri:0, instance:Base.BaseClass@352c1b98]" started-at="2023-07-10T12:16:37 IST" name="Beforeclass" finished-at="2023-07-10T12:16:50 IST" duration-ms="12822" status="PASS">
+    <test started-at="2024-01-13T19:07:32 IST" name="Default test" finished-at="2024-01-13T19:08:18 IST" duration-ms="46053">
+      <class name="Base.ActionClass">
+        <test-method is-config="true" signature="Beforeclass()[pri:0, instance:Base.ActionClass@54504ecd]" started-at="2024-01-13T19:07:33 IST" name="Beforeclass" finished-at="2024-01-13T19:08:02 IST" duration-ms="28828" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Beforeclass -->
-        <test-method signature="Test()[pri:0, instance:Base.BaseClass@352c1b98]" started-at="2023-07-10T12:16:50 IST" name="Test" finished-at="2023-07-10T12:16:58 IST" duration-ms="7962" status="PASS">
+        <test-method signature="Test1()[pri:0, instance:Base.ActionClass@54504ecd]" started-at="2024-01-13T19:08:02 IST" name="Test1" finished-at="2024-01-13T19:08:18 IST" duration-ms="16142" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:Base.BaseClass@352c1b98]" started-at="2023-07-10T12:16:58 IST" name="getResult" finished-at="2023-07-10T12:16:58 IST" duration-ms="10" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Test status=SUCCESS method=BaseClass.Test()[pri:0, instance:Base.BaseClass@352c1b98] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Test1 -->
+        <test-method is-config="true" signature="Afterclass()[pri:0, instance:Base.ActionClass@54504ecd]" started-at="2024-01-13T19:08:18 IST" name="Afterclass" finished-at="2024-01-13T19:08:18 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="AfterClass()[pri:0, instance:Base.BaseClass@352c1b98]" started-at="2023-07-10T12:16:58 IST" name="AfterClass" finished-at="2023-07-10T12:16:59 IST" duration-ms="670" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterClass -->
-      </class> <!-- Base.BaseClass -->
+        </test-method> <!-- Afterclass -->
+      </class> <!-- Base.ActionClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

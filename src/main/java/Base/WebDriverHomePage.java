@@ -4,6 +4,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
@@ -30,9 +31,11 @@ public class WebDriverHomePage {
 	
 	@FindBy(xpath= "//a[@id='contact-us']")
 	WebElement contactus;
+	
 	public WebDriverHomePage(WebDriver driver)
 	{
 		this.driver=driver;
+		PageFactory.initElements(driver, this);
 	}
 	
 	public void ContactUs()
@@ -65,16 +68,10 @@ public class WebDriverHomePage {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div/p[1]/a")));
 		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/p[1]/a")).click();
 	}
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
+	public void LoginUs()
+	{
+		
+	}
 	
 	
 	
