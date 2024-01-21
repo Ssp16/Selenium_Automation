@@ -1,11 +1,13 @@
 package Base;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -68,11 +70,40 @@ public class WebDriverHomePage {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div/div/p[1]/a")));
 		driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div/p[1]/a")).click();
 	}
-	public void LoginUs()
+	public void dropdownlink()
 	{
+		System.out.println(driver.getCurrentUrl());
+		driver.findElement(By.xpath("//a[text()='Webdriveruniversity.com']")).click();
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+	    driver.switchTo().window(tabs.get(1));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@id='dropdown-checkboxes-radiobuttons']")));
+		driver.findElement(By.xpath("//a[@id='dropdown-checkboxes-radiobuttons']")).click();
+		ArrayList<String> tabs1 = new ArrayList<String> (driver.getWindowHandles());
+		for(int i=0 ;i<tabs1.size();i++)
+		{
+			driver.switchTo().window(tabs1.get(i));
+			String we =driver.getTitle();
+			if(driver.getTitle()=="https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html")
+			{
+				break;
+			}
+				
+		}
+	    
+		driver.findElement(By.xpath("//select[@id='dropdowm-menu-1']")).click();
+		Actions act = new Actions(driver);
+		act.keyDown(Keys.ARROW_DOWN);
+		act.keyDown(Keys.ENTER);
+		act.build().perform();
 		
-	}
+		driver.findElement(By.xpath("//select[@id='dropdowm-menu-1']")).click();
+		Select select = new Select(driver.findElement(By.xpath("//select[@id='dropdowm-menu-1']")));
+		
+		select.selectByValue("Python");
+		
 	
+	}
 	
 	
 }

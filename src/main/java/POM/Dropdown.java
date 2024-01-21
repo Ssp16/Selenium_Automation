@@ -19,8 +19,8 @@ public class Dropdown {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public method1()
+	public void method1()
 	{
-		system.out.println("Fellowcreators");
+		System.out.println("Fellowcreators");
 	}
 }

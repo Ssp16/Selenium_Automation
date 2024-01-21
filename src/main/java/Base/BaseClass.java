@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -15,6 +15,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import POM.SauceDemoPage;
+import POM.ultimateqa;
 public class BaseClass {
 	String url="https://ultimateqa.com/dummy-automation-websites/";
 	WebDriver driver;
@@ -49,7 +50,7 @@ public class BaseClass {
         htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 	}
-	@Test
+	@Test(enabled=false)
 	public void Test() throws InterruptedException
 	{
 		test = extent.createTest("Test Case 1", "The test case 1 has passed");
@@ -66,7 +67,16 @@ public class BaseClass {
 		//web.autocomplete();
 		web.ContactUs();
 	}
-	 @AfterMethod
+	@Test
+	public void UltimateqaTest() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//a[text()='Webdriveruniversity.com']")).click();
+		WebDriverHomePage web = new WebDriverHomePage(driver);
+		//web.autocomplete();
+		web.dropdownlink();
+		
+	}
+	 @AfterMethod(enabled=false)
 	    public void getResult(ITestResult result) {
 	        if(result.getStatus() == ITestResult.FAILURE) {
 	            test.log(Status.FAIL,result.getThrowable());
@@ -81,8 +91,7 @@ public class BaseClass {
 	@AfterClass
 	public void AfterClass()
 	{
-		driver.close();
-		extent.flush();
+		
 	}
 	
 
